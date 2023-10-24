@@ -3,17 +3,21 @@ import Card from '../UI/Card';
 import './CostItem.css';
 
 const CostItem = (props) =>  {
+
     
     return ( 
          <li>
             <Card className="cost-item">
                <CostDate date={props.date}/>
-                <div className="cost-item__description">
+               <div className="cost-item__description">
                     <h2>{props.description}</h2>
-                    <div className="cost-item__price">${props.amout}</div>         
+                    <div className="cost-item__price">${props.amout}</div>  
+                    <span className='close'
+                          onClick={props.onDelete}></span>   
                 </div>
             </Card>
         </li>
+        
     ); 
 }
 

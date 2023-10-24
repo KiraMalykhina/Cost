@@ -7,4 +7,28 @@
     color: #fefae1;
     text-align: center;
   }
+
+.item-enter {
+    opacity: 0;
+}
+
+.item-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+}
+
+.item-exit {
+    opacity: 1;
+    visibility: visible;
+}
+
+.item-exit-active {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
+}
+
+
+
+
   

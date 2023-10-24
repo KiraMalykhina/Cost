@@ -78,10 +78,14 @@ const App = () => {
         // console.log(cost);
   };
 
+  const deleteCost = (costDelete) => {
+      setCosts(costs.filter(cost => cost.id !== costDelete));
+  }
+
   return (
     <div>
         <NewCost onAddCost={addCostHandler}/>
-        <Costs costs={costs}/>      
+        <Costs costs={costs} onDeleteCost={deleteCost}/>      
     </div>
   );
 }

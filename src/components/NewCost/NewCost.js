@@ -24,12 +24,14 @@ const NewCost = (props) => {
         setIsFormVisible(false);
     }
 
-    return (
-    <div className="new-cost">
-        {!isFormVisible && <button onClick={inputCostDataHandler}>Добавить Новый Расход</button>}
-        {isFormVisible && <CostForm onSaveCostData={saveCostDataHandler} onCancelForm={cancelCostHandler}/>}
-    </div>
-    )
+    return (     
+                <div className="new-cost">
+                    {!isFormVisible && <button onClick={inputCostDataHandler}>Добавить Новый Расход</button>}
+                    {isFormVisible && <CostForm onSaveCostData={saveCostDataHandler} onCancelForm={cancelCostHandler}/>}
+                 
+                </div>
+    )   
+    
 }
 
 export default NewCost;

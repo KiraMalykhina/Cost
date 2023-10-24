@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// import { Transition } from 'react-transition-group';
 import './CostForm.css';
 
 const CostForm = (props) => {
@@ -34,36 +35,37 @@ const CostForm = (props) => {
     }
 
     return (
-        <form onSubmit={submitHandler} >
-            <div className="new-cost__controls">
-                <div className="new-cost__control">
-                    <label htmlFor="">Название</label>
-                    <input type="text" 
-                           onChange={nameChangeHandler} 
-                           value={name} />     
+            <form onSubmit={submitHandler}>
+                <div className="new-cost__controls">
+                    <div className="new-cost__control">
+                        <label htmlFor="">Название</label>
+                        <input type="text" 
+                            onChange={nameChangeHandler} 
+                            value={name} />     
+                    </div>
+                    <div className="new-cost__control">
+                        <label htmlFor="">Сумма</label>
+                        <input type="number"
+                            min="0.01"  
+                            step="0.01" 
+                            onChange={sumChangeHandler} 
+                            value={sum}/>     
+                    </div>
+                    <div className="new-cost__control">
+                        <label htmlFor="">Дата</label>
+                        <input type="date" 
+                            min="2022.01.01" 
+                            step="2023.12.31" 
+                            onChange={dateChangeHandler} 
+                            value={date}/>     
+                    </div>
+                    <div className="new-cost__actions">
+                        <button type="submit">Добавить расход</button>
+                        <button type="button" onClick={props.onCancelForm}>Отмена</button>
+                    </div>
                 </div>
-                <div className="new-cost__control">
-                    <label htmlFor="">Сумма</label>
-                    <input type="number"
-                           min="0.01"  
-                           step="0.01" 
-                           onChange={sumChangeHandler} 
-                           value={sum}/>     
-                </div>
-                <div className="new-cost__control">
-                    <label htmlFor="">Дата</label>
-                    <input type="date" 
-                           min="2022.01.01" 
-                           step="2023.12.31" 
-                           onChange={dateChangeHandler} 
-                           value={date}/>     
-                </div>
-                <div className="new-cost__actions">
-                    <button type="submit">Добавить расход</button>
-                    <button type="button" onClick={props.onCancelForm}>Отмена</button>
-                </div>
-            </div>
-        </form>
+            </form>         
+       
     )
 }
 
